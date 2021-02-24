@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPS.Data", "RPS.Data\RPS.Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPS.Web.Razor", "RPS.Web.Razor\RPS.Web.Razor.csproj", "{E63B2407-0200-4A87-A665-9CCD7AEAB4D4}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPS.Web.MVC", "RPS.Web.MVC\RPS.Web.MVC.csproj", "{1E51B479-BB38-4B8F-B77A-3FD7255F9C9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E63B2407-0200-4A87-A665-9CCD7AEAB4D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E63B2407-0200-4A87-A665-9CCD7AEAB4D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E63B2407-0200-4A87-A665-9CCD7AEAB4D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E51B479-BB38-4B8F-B77A-3FD7255F9C9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E51B479-BB38-4B8F-B77A-3FD7255F9C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E51B479-BB38-4B8F-B77A-3FD7255F9C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E51B479-BB38-4B8F-B77A-3FD7255F9C9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
