@@ -1,0 +1,40 @@
+﻿@model RPS.Web.Models.ViewModels.PtItemTasksVm
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.ItemId)
+
+    <div class="form-row align-items-center">
+        <div class="col-sm-6">
+            @Html.EditorFor(model => model.NewTaskTitle, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter new task..." } })
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+
+    <hr />
+
+
+     foreach (var task in Model.Tasks)
+        { 
+        <div class="input-group mb-3 col-sm-8">
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    @Html.EditorFor(modelItem => task.Completed, new { htmlAttributes = new { @checked = task.Completed, id = "pt-task-checkbox-" + task.Id } })
+                </div>
+            </div>
+            @Html.EditorFor(modelItem => task.Title, new { htmlAttributes = new { @class= "form-control", id="pt-task-input-" + task.Id } })
+
+            <div class="input-group-append">
+                @{ 
+                    var done = task.Completed ? "true" : "false";
+                }
+                <button class="btn btn-primary pt-btn-task-update" type="submit" data-task-id="@task.Id">Update</button>
+                <button class="btn btn-danger pt-btn-task-delete" type="submit" formaction="/Backlog/@Model.ItemId/TaskDelete/@task.Id" data-task-id="@task.Id">Delete</button>
+            </div>
+        </div>
+    }
+}
+

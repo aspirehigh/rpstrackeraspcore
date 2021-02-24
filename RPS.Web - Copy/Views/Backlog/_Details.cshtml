@@ -1,0 +1,74 @@
+﻿@model RPS.Web.Models.ViewModels.PtItemDetailsVm
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="form-group row">
+        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-6">
+            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-6">
+            @Html.TextAreaFor(model => model.Description,  new { @class = "form-control", style="width: 100%; height: 60px;" } )
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(model => model.Estimate, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-6">
+            @Html.EditorFor(model => model.Estimate, new { htmlAttributes = new { @class = "form-control", type = "range", step = "1", min = "0", max = "20" } })
+            @Html.ValidationMessageFor(model => model.Estimate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(model => model.SelectedItemType, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-6">
+            @Html.DropDownListFor(m => m.SelectedItemType, Model.ItemTypes, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.SelectedItemType, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(model => model.SelectedStatus, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-6">
+            @Html.DropDownListFor(m => m.SelectedStatus, Model.Statuses, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.SelectedStatus, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(model => model.SelectedPriority, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-6">
+            @Html.DropDownListFor(m => m.SelectedPriority, Model.Priorities, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.SelectedPriority, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(model => model.SelectedAssigneeId, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-6">
+            @Html.DropDownListFor(m => m.SelectedAssigneeId, Model.Users, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.SelectedAssigneeId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="offset-sm-2 col-sm-10">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </div>
+
+}

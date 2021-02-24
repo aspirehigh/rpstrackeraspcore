@@ -1,0 +1,51 @@
+﻿@using RPS.Web.Models.Routing;
+@using RPS.Web.Models.ViewModels;
+@model RPS.Core.Models.PtItem
+
+<div>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+        <h1 class="h2" id="itemTitle">@Model.Title</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+                <button onclick="location.href = '@(Url.Action("Details", "Backlog", new { id = Model.Id }))'">Details</button>
+                <button onclick="location.href = '@(Url.Action("Tasks", "Backlog", new { id = Model.Id }))'">Tasks</button>
+                <button onclick="location.href = '@(Url.Action("Chitchat", "Backlog", new { id = Model.Id }))'">Chitchat</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@{
+    switch (ViewBag.screen)
+    {
+        case DetailScreenEnum.Details:
+
+            @await Html.PartialAsync("_Details", new PtItemDetailsVm(Model, ViewBag.users));
+
+            break;
+        case DetailScreenEnum.Tasks:
+
+            @await Html.PartialAsync("_Tasks", new PtItemTasksVm(Model));
+
+
+            @section scripts {
+                @await Html.PartialAsync("_TasksScripts")
+            }
+
+            break;
+        case DetailScreenEnum.Chitchat:
+
+            @await Html.PartialAsync("_Chitchat", new PtItemCommentsVm(Model, ViewBag.currentUser));
+
+            break;
+    }
+}
+
+
+@section styles {
+    @*@Styles.Render("~/Content/detailcss")*@
+    <link rel="stylesheet" href="~/css/detail.css" />
+
+}
+
