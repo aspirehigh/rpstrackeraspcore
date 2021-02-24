@@ -8,9 +8,15 @@
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/css/site.css" rel="stylesheet" />
 
-    @RenderSection("styles", required: false)
-
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/kendo/js/kendo.all.min.js"></script>
+    <script src="~/lib/kendo/js/kendo.aspnetmvc.min.js"></script>
     
+    @Html.Kendo().DeferredScripts()
+
+
+    @RenderSection("styles", required: false)
 </head>
 <body>
     <div class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
@@ -189,7 +195,8 @@
 
     </div>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
