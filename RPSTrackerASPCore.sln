@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.489
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPS.Core", "RPS.Core\RPS.Core.csproj", "{0CE3F4BD-D552-454F-BDCC-075F104AF0B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPS.Data", "RPS.Data\RPS.Data.csproj", "{A8ADBB52-E235-4106-8FB0-49A78C9E01E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPS.Data", "RPS.Data\RPS.Data.csproj", "{A8ADBB52-E235-4106-8FB0-49A78C9E01E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPS.Web", "RPS.Web\RPS.Web.csproj", "{E63B2407-0200-4A87-A665-9CCD7AEAB4D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPS.Web.Razor", "RPS.Web\RPS.Web.Razor.csproj", "{E63B2407-0200-4A87-A665-9CCD7AEAB4D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
